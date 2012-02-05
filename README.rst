@@ -1,5 +1,5 @@
-Threecents API Examples
-=======================
+3¢ API Examples
+===============
 
 This repo shows how to use the 3¢ API in various languages. Feel free to fork it
 and add an example in your favorite language. We'd love merge some pull
