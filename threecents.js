@@ -13,7 +13,7 @@
   var button = document.getElementById('threecents-button');
   button.onclick = function() {
     var client = new XMLHttpRequest();
-    var key = "";
+    var key = tc.getAttribute("data-key");
     client.open("POST", "http://threecents.elevenbasetwo.com/api/feedback/" + key, false);
     client.send(JSON.stringify({feedback: "It's the best thing ever!"}));
   }
