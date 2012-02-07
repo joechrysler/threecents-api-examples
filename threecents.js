@@ -4,7 +4,17 @@
 //
 // making sure to replace the `data-key` value with your actual Threecents key.
 
-var tc = document.getElementById('threecents');
-var node = document.createElement('div');
-node.innerHTML = '<form id=threecent-form><textarea></textarea><input type=submit></input></form>';
-tc.parentNode.insertBefore(node, tc.nextSibling);
+(function() {
+  var tc = document.getElementById('threecents');
+  var node = document.createElement('div');
+  node.innerHTML = '<form id=threecent-form><textarea></textarea><button id=threecents-button>Submit</button></form>';
+  tc.parentNode.insertBefore(node, tc.nextSibling);
+
+  var button = document.getElementById('threecents-button');
+  button.onclick = function() {
+    var client = new XMLHttpRequest();
+    var key = "";
+    client.open("POST", "http://threecents.elevenbasetwo.com/api/feedback/" + key, false);
+    client.send(JSON.stringify({feedback: "It's the best thing ever!"}));
+  }
+})();
